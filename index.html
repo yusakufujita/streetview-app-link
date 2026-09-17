@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Street View 360 Maps</title>
+<script>
+(function () {
+  var ua = navigator.userAgent || navigator.vendor || window.opera;
+  var IOS_URL = "https://apps.apple.com/us/app/street-view-360-maps/id6756085251";
+  var ANDROID_URL = "https://play.google.com/store/apps/details?id=com.ashita.streetview";
+
+  var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+  var isAndroid = /android/i.test(ua);
+
+  if (isIOS) {
+    window.location.replace(IOS_URL);
+  } else if (isAndroid) {
+    window.location.replace(ANDROID_URL);
+  }
+  // PC等はリダイレクトせず、下のリンクを表示したままにする
+})();
+</script>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  p { margin: 8px 0; }
+  a { color: #0070f3; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+  <p>アプリストアへ移動しています…</p>
+  <p><a href="https://apps.apple.com/us/app/street-view-360-maps/id6756085251">iPhoneの方はこちら</a></p>
+  <p><a href="https://play.google.com/store/apps/details?id=com.ashita.streetview">Androidの方はこちら</a></p>
+</body>
+</html>
