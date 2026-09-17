@@ -18,29 +18,85 @@
   } else if (isAndroid) {
     window.location.replace(ANDROID_URL);
   }
-  // PC等はリダイレクトせず、下のリンクを表示したままにする
+  // PC等はリダイレクトせず、下のカードを表示したままにする
 })();
 </script>
 <style>
+  :root {
+    color-scheme: light dark;
+  }
+  * { box-sizing: border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    text-align: center;
     padding: 24px;
-    box-sizing: border-box;
+    background: linear-gradient(160deg, #1e3a8a 0%, #0ea5e9 100%);
   }
-  p { margin: 8px 0; }
-  a { color: #0070f3; text-decoration: none; font-weight: 600; }
+  .card {
+    width: 100%;
+    max-width: 360px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  }
+  .icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 16px;
+    border-radius: 18px;
+    background: linear-gradient(160deg, #1e3a8a 0%, #0ea5e9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+  }
+  h1 {
+    font-size: 18px;
+    margin: 0 0 4px;
+    color: #111827;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 24px;
+  }
+  .store-link {
+    display: block;
+    width: 100%;
+    padding: 13px 16px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+  .store-link:last-of-type { margin-bottom: 0; }
+  .store-link:active { opacity: 0.7; }
+  .store-link.ios {
+    background: #111827;
+    color: #ffffff;
+  }
+  .store-link.android {
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+  }
 </style>
 </head>
 <body>
-  <p>アプリストアへ移動しています…</p>
-  <p><a href="https://apps.apple.com/us/app/street-view-360-maps/id6756085251">iPhoneの方はこちら</a></p>
-  <p><a href="https://play.google.com/store/apps/details?id=com.ashita.streetview">Androidの方はこちら</a></p>
+  <div class="card">
+    <div class="icon">🌐</div>
+    <h1>Street View 360 Maps</h1>
+    <p class="subtitle">アプリストアへ移動しています…</p>
+    <a class="store-link ios" href="https://apps.apple.com/us/app/street-view-360-maps/id6756085251"> App Store で開く</a>
+    <a class="store-link android" href="https://play.google.com/store/apps/details?id=com.ashita.streetview">▶ Google Play で開く</a>
+  </div>
 </body>
 </html>
